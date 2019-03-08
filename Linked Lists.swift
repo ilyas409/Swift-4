@@ -7,6 +7,11 @@ public class ListNode {
   }
 }
 
+var l1 = ListNode(0)
+l1.next = ListNode(1)
+l1.next!.next = ListNode(2)
+l1.next!.next!.next = ListNode(3)
+
 func reverseList(_ head: ListNode?) -> ListNode? {
     var node = head
     var prev: ListNode? = nil
@@ -17,4 +22,11 @@ func reverseList(_ head: ListNode?) -> ListNode? {
         node = tmpNext
     }
     return prev
+}
+func printList(_ head: ListNode?){
+    var node = head
+    while node != nil{
+        print(node!.value)
+        node = node!.next
+    }
 }

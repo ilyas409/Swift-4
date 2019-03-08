@@ -8,6 +8,17 @@ let nums = [1,2,3,4]
 let sum = nums.reduce(0, +)
 let products = nums.reduce(1, *)
 
+// regular for loop 
+for i in 0...n-1{ // n would be included unlike Python
+}
+
+// iterate through an array
+for n in nums{
+}
+// with enumeration
+for (i, n) in nums.enuerated(){
+}
+
 func maxSubArray(_ nums: [Int]) -> Int {
     var max_sum = nums[0]
     var cur_sum = nums[0]

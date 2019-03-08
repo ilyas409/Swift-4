@@ -30,3 +30,47 @@ func printList(_ head: ListNode?){
         node = node!.next
     }
 }
+
+// add two numbers represented as Linked Lists and return the result as a Linked List 
+func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+    var node: ListNode? = ListNode(0)
+    let res = node
+    var n1 = l1; var n2 = l2
+    var carry = 0
+    while let nn1 = n1, let nn2 = n2{
+        let s = nn1.val + nn2.val + carry
+        carry = s / 10
+
+        node!.next = ListNode(s % 10)
+        node = node!.next
+
+        n1 = nn1.next
+        n2 = nn2.next
+    }
+
+    while let nn1 = n1{
+        let s = nn1.val + carry
+        carry = s / 10
+
+        node!.next = ListNode(s % 10)
+        node = node!.next
+
+        n1 = nn1.next
+    }
+
+    while let nn2 = n2{
+        let s = nn2.val + carry
+        carry = s / 10
+
+        node!.next = ListNode(s % 10)
+        node = node!.next
+
+        n2 = nn2.next
+    }
+
+    if carry > 0{
+        node!.next = ListNode(carry)
+    }
+
+    return res!.next
+}

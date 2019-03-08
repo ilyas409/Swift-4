@@ -21,3 +21,23 @@ func isValidBST(_ root: TreeNode?) -> Bool {
     }
     return aux(root)
 }
+
+func isSymmetric(_ root: TreeNode?) -> Bool {
+        
+    func isMirror(_ t1: TreeNode?, _ t2: TreeNode?) -> Bool {
+        if (t1 == nil && t2 == nil){
+            return true
+        }
+        if (t1 == nil || t2 == nil){
+            return false
+        }
+        return (t1!.val == t2!.val) 
+            && isMirror(t1!.right, t2!.left)
+            && isMirror(t1!.left, t2!.right)
+    }
+        
+    guard let node = root else {
+        return true
+    }
+    return isMirror(node, node)
+}

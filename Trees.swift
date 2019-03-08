@@ -10,13 +10,11 @@
 }
 
 func isValidBST(_ root: TreeNode?) -> Bool {
-     func aux(_ node: TreeNode?, _ left: Int = Int.min, _ right: Int = Int.max) ->Bool{
-        //print(left, right)
+     func aux(_ node: TreeNode?, _ left: Int = Int.min, _ right: Int = Int.max) ->Bool{)
         guard let node = node else {
             return true
         }
         if node.val >= right || node.val <= left{
-            //print(left, node.val, right)
             return false
         }
         return aux(node.left, left, node.val) && aux(node.right, node.val, right)

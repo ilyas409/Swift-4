@@ -25,10 +25,11 @@ findPath(from: "A", to: "Z")
 
 // Adjacency list using a Dictionary with Strings as keys and Dictionaries as values.
 // Each Dictionary has the node as its key and the a the weight as its value
-
-let graph = ["A" : [["B" : 4], ["E" : 10]],
-             "B" : [["C" : 21]],
-             "C" : [["Z" : 4]],
-             "D" : [["C" : 5]],
-             "E" : [["D" : 5], ["F" : 8]],
-             "F" : [["C" : 12]]]
+let graph = ["A" : ["B" : 4, "E" : 10],
+             "B" : ["C" : 21],
+             "C" : ["Z" : 4],
+             "D" : ["C" : 5],
+             "E" : ["D" : 5, "F" : 8],
+             "F" : ["C" : 12],
+             "Z" : [:]
+            ]   

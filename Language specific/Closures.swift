@@ -40,3 +40,22 @@ for f in fruits{
     f.print()
 }
 
+print("======")
+// Non-escaping closure
+func checkComparator(f1: Fruit, f2: Fruit, by comparator: (_ fruit1: Fruit, _ fruit2: Fruit) -> Bool){
+    print(comparator(f1, f2))
+}
+
+checkComparator(f1: f1, f2: f2, by: byName)
+
+
+
+// scaping closure to server as completion handler
+func eatFruitWithResult0(f: Fruit, completion: @escaping (_ result: String) -> Void){
+    print("Start eating")
+    completion("Finished eating")
+}
+
+eatFruitWithResult0(f: f3, completion: {(result: String) in
+    print(result)
+})
